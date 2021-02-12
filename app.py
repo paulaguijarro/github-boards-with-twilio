@@ -38,7 +38,7 @@ def user_action(body):
   
 # Sends a weekly notification to the user (configured by a cron job) with the tasks completed (last column of the board)
 def send_weekly_digest():
-  done_name = (list(env.columns.keys())[list(env.columns.values()).index(env.done_column)])
+  done_name = (list(env.COLUMNS.keys())[list(env.COLUMNS.values()).index(env.DONE_COLUMN)])
   text = request_github.get_cards(done_name)
   if text:
     weekly_digest = "Your completed tasks for this week:\n\n" + text
@@ -49,4 +49,4 @@ def send_weekly_digest():
   request_github.archive_done()
 
 if __name__ == '__main__':
-  app.run(debug=True)
+  app.run(debug=False)

@@ -1,6 +1,6 @@
 # AUTOMATING MY TASKS USING GITHUB & TWILIO
 
-This is an automatic system to organize tasks on a Kanban board. You can use it to share a collaborative board with other people or to keep track of your own personal tasks.  
+This is a simple app to automatically organize tasks on a Kanban board. You can use it when sharing a collaborative board with other people or to keep track of your own personal tasks.
 You can add simple cards to the 'to do' column wherever you are thanks to Twilio Programmable SMS.  
 You will also receive a weekly summary on your phone with the tasks you have completed and these will be archived to clear the board.
 
@@ -13,14 +13,14 @@ This has been made using:
 ## GITHUB BOARDS
 
 For my Kanban board I'm using a private project board: [GitHub Project Boards](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/about-project-boards) configured as "basic kanban".  
-You can configure the columns you need. Bearing in mind that the application will take the first one to add cards received by SMS, and the last one will be from which it sends the weekly digest notification.
+You can configure the columns you need, bearing in mind that the application will take the first one to add cards received by SMS, and the last one will be from which it sends the weekly digest notification.
 
 ### Configure Github Project
 
 Within your github account, you just have to go to the projects tab and click on the "create project" button, then you can choose:
-- A name for your project board that you will later include in a variable called "github_project_name" within the "env" file.
+- A name for your project board that you will later include in a variable called "GITHUB_PROJECT_NAME" within the "env" file.
 - Your preferred template: In my case it will be a "basic kanban"
-- The visibility for your project: as my board will be for personal tasks and not to share with a team, I will choose the "private" option.
+- The visibility for your project: as my board will be for personal tasks and not for sharing with a team, I will choose the "private" option.
 
 ## TWILIO PROGRAMMABLE SMS
 
@@ -42,13 +42,13 @@ cp .env.example .env
 You will need to fill in the specified variables with your own data:
 
 ```
-account_sid
-auth_token
-twilio_phone
-phone
-github_token
-github_username
-github_project_name
+ACCOUNT_SID
+AUTH_TOKEN
+TWILIO_PHONE
+PHONE
+GITHUB_TOKEN
+GITHUB_USERNAME
+GITHUB_PROJECT_NAME
 ```
 
 The rest of the variables, although they must be included in the env file, you can leave them blank because they will be configured when the application starts.

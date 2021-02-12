@@ -5,11 +5,11 @@ from twilio.base.exceptions import TwilioRestException
 
 def send_message(text):
   try:
-    client = Client(env.account_sid, env.auth_token)
+    client = Client(env.ACCOUNT_SID, env.AUTH_TOKEN)
     message = client.messages.create(
       body= text,
-      from_= env.twilio_phone,
-      to= env.phone
+      from_= env.TWILIO_PHONE,
+      to= env.PHONE
     )
   except TwilioRestException as e:
     print(e)
