@@ -32,7 +32,7 @@ For more information about how Twilio works, you can check its [documentation](h
 ## PYTHON & FLASK
 
 The app is developed using Python and Flask, it will make requests to the Github API to manage cards, and Twilio library will be used to send and receive SMS's.  
-Once you have cloned this repository, there are some things that you will need to configure to get the application up and running: 
+Once you have cloned this repository, there are some things that you will need to configure to get the application up and running:
 
 ### App configuration
 
@@ -88,6 +88,7 @@ Twilio number will automatically respond to incoming SMS sending a confirmation 
 ### Cron Job
 
 Add a cron job to receive an SMS with the weekly digest of completed cards (in done column) and to move them to archived:
+
 #### Configure cron job in linux
 
 To edit a cron job:
